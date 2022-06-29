@@ -1,0 +1,602 @@
+@import "_fonts";
+@import "_base";
+@import "./mixins/desktop";
+
+body {
+    scroll-behavior: smooth;
+    &.active {
+        overflow-y: hidden;
+    }
+}
+
+.preloader {
+    z-index: 20;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &__image {
+        position: absolute;
+        width: 50vw;
+        max-width: 591px;
+        object-fit: contain;
+        bottom: -250px;
+        left: -250px;
+    }
+}
+
+@keyframes loader {
+    from {
+        bottom: -100%;
+        left: -100%;
+    }
+    to {
+        bottom: 100%;
+        left: 100%;
+    }
+}
+
+main {
+    overflow: hidden;
+    scroll-behavior: smooth;
+}
+
+.container {
+    padding: 0 20px;
+
+    @include desktop {
+        padding: 0 50px;
+    }
+
+    @include desktopL {
+        padding: 0 150px;
+        max-width: 1800px;
+        margin: 0 auto;
+    }
+}
+
+.header {
+    position: relative;
+    z-index: 10;
+    padding-top: 30px;
+
+    @include desktop {
+        padding-top: 100px;
+    }
+
+    &__wrapper {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    &__menu {
+        position: relative;
+        z-index: 11;
+
+        @include desktop {
+            display: none;
+        }
+    }
+
+    &__line {
+        display: block;
+        width: 26px;
+        height: 2.25px;
+        background: #282A33;
+
+        &:nth-child(2) {
+            margin: 5.62px 0;
+        }
+    }
+
+    &__bgr {
+        display: none;
+
+        @include desktop {
+            display: block;
+            position: absolute;
+            width: 100px;
+            top: 3px;
+            right: 22.3vw;
+            z-index: -1;
+        }
+
+        svg {
+            display: block;
+        }
+    }
+}
+
+.menu-des {
+    display: none;
+
+    @include desktop {
+        display: block;
+    }
+
+    &__list {
+        display: flex;
+        list-style: none;
+    }
+
+    &__item:nth-child(2) {
+        margin-right: 30px;
+        margin-left: 32px;
+    }
+
+    &__link {
+        text-decoration: none;
+        font-family: 'SF Pro Display Bold';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 21px;
+        color: #282A33;
+    }
+}
+
+.popup {
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    top: 0;
+    background: #FAFAFA;
+    overflow-y: scroll;
+
+    &.active {
+        display: block;
+    }
+
+    &__list {
+        margin: 60px 0 0 40px;
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        list-style: none;
+        position: relative;
+        z-index: 1;
+    }
+
+    &__link {
+        font-family: 'SF Pro Display Bold';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 26px;
+        line-height: 31px;
+        color: #282A33;
+        text-decoration: none;
+    }
+
+    &__bgr {
+        display: flex;
+        justify-content: center;
+        margin-top: -33px;
+    }
+
+    &__image {
+        margin-right: 9px;
+        height: 100%;
+        width: 123.7vw;
+    }
+
+    &__vector {
+        position: absolute;
+        top: 32px;
+        left: 54px;
+    }
+}
+
+.about {
+    position: relative;
+    margin-top: -28px;
+    padding-bottom: 40px;
+
+    @include desktop {
+        padding-bottom: 210px;
+    }
+
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        @include desktop {
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+        }
+    }
+
+    &__me {
+        @include desktop {
+            flex: 0 1 560px;
+        }
+    }
+
+    &__image {
+        width: 21.33vw;
+        height: 100%;
+
+        @include desktop {
+            width: 150px;
+            height: 150px;
+        }
+    }
+
+    &__title {
+        padding: 30px 0 20px;
+        font-size: 28px;
+        line-height: 140%;
+
+        @include desktop {
+            padding: 40px 0 30px;
+            font-size: 36px;
+        }
+    }
+
+    &__contacts {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        @include desktop {
+            margin-right: 142px;
+        }
+    }
+
+    &__contact {
+        text-decoration: none;
+        font-family: 'SF Pro Display Regular';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 140%;
+        color: #282A33;
+    }
+
+    &__social {
+        display: flex;
+        gap: 20px;
+        margin-top: 5px;
+    }
+
+    
+
+    &__link-image {
+        display: block;
+    }
+
+    &__vektor {
+        position: absolute;
+        padding-right: 30px;
+        bottom: -18px;
+        width: 100%;
+        z-index: -1;
+
+        @include desktop {
+            display: none;
+        }
+         
+        svg {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    &__vektor-des {
+        display: none;
+
+        @include desktop {
+            display: block;
+            position: absolute;
+            padding-right: 30px;
+            bottom: -18px;
+            width: 100%;
+            z-index: -1;
+        }
+
+        @include desktopL {
+            padding-right: 300px;
+            max-width: 1800px;
+        }
+
+                svg {
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                }
+    }
+}
+
+.experience {
+
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+
+        @include desktop {
+            flex-direction: row;
+            gap: 0;
+        }
+    }
+
+    &__image-wrapper {
+        display: flex;
+        justify-content: center;
+    }
+
+    &__image {
+        display: block;
+        width: 53.33vw;
+        height: 100%;
+
+        @include desktop {
+            width: 34.72vw;
+            height: fit-content;
+        }
+    }
+}
+
+.work {
+    @include desktop {
+        max-width: 560px;
+    }
+    &__title {
+        font-size: 20px;
+        line-height: 24px;
+        margin-bottom: 20px;
+
+        @include desktop {
+            font-size: 24px;
+            line-height: 29px;
+            margin-bottom: 30px;
+        }
+    }
+
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 60px;
+    }
+}
+
+.work-card {
+    &__date {
+        font-family: 'SF Pro Display Regular';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 17px;
+        color: #828282;
+    }
+
+    &__wrapper-name {
+        padding: 8px 0;
+        display: flex;
+        gap: 8px;
+    }
+
+    &__name {
+        font-size: 14px;
+        line-height: 17px;
+    }
+
+    &__wrapper-place {
+        display: flex;
+        gap: 8px;
+        align-items: center;
+        margin-bottom: 8px;
+
+        @media (max-width: 370px) {
+            flex-wrap: wrap;
+        }
+    }
+
+    &__logo {
+        align-self: flex-start;
+    }
+
+    &__place {
+        line-height: 17px;
+
+        @media (min-width: 370px) {
+            white-space: nowrap;
+        }
+    }
+
+    &__subtitle {
+        line-height: 17px;
+    }
+
+    &__link {
+        display: block;
+        color: #2F80ED;
+        font-family: 'SF Pro Display Regular';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 17px;
+        margin-top: 4px;
+    }
+}
+
+.education {
+    @include desktop {
+        max-width: 269px;
+        text-align: center;
+    }
+
+    &__title {
+        font-size: 20px;
+        line-height: 24px;
+        margin-bottom: 16px;
+
+        @include desktop {
+            font-size: 24px;
+            line-height: 29px;
+            margin-bottom: 32px;
+        }
+    }
+
+    &__wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+
+        @include desktop {
+            gap: 30px;
+        }
+    }
+}
+
+.educ-card {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    flex: 0 1 157px;
+    align-items: center;
+
+    &__image {
+        width: fit-content;
+        height: 35px;
+    }
+
+    &__title {
+        font-size: 14px;
+        line-height: 140%;
+        text-align: center;
+    }
+
+    &__subtitle {
+        text-align: center;
+    }
+}
+
+.skill {
+    padding-top: 40px;
+
+    @include desktop {
+        padding-top: 190px;
+    }
+
+    &__wrapper {
+        position: relative;
+    }
+
+    &__bgr {
+        position: absolute;
+        top: -40px;
+        width: 100%;
+        padding-right: 30px;
+        z-index: -1;
+
+        @include desktop {
+            display: none;
+        }
+    }
+
+    &__bgr-desktop {
+        display: none;
+
+        @include desktop {
+            display: block;
+            position: absolute;
+            top: -190px;
+            width: 100%;
+            padding-right: 30px;
+            z-index: -1;
+        }
+
+        @include desktopL {
+            padding-right: 300px;
+        }
+    }
+
+    &__title {
+        font-size: 22px;
+        line-height: 26px;
+        margin-bottom: 21px;
+    }
+
+    &__item-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    &__item {
+        flex: 0 1 300px;
+
+        @include desktop {
+            flex: 0 1 270px;
+        }
+    }
+
+    &__item-title {
+        font-size: 14px;
+        line-height: 17px;
+        margin-bottom: 6px;
+    }
+}
+
+.footer {
+    padding: 40px 0;
+
+    @include desktop {
+        padding: 200px 0 50px;
+    }
+
+    &__wrapper {
+        display: flex;
+        justify-content: center;
+    }
+
+    &__image {
+        max-width: 512px;
+        width: 100vw;
+        height: 100%;
+    }
+}
+
+.top-link {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 1px solid #D2233C;
+
+    @include desktopL {
+        bottom: 90px;
+        right: 25px;
+        width: 48px;
+        height: 48px;
+    }
+
+    &__link {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        svg {
+        @include desktopL {
+            width: 18px;
+            height: 24px;
+        }
+    }
+    }
+
+    
+}
