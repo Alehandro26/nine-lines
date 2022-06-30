@@ -286,7 +286,7 @@ main {
 
         @include desktop {
             flex-direction: row;
-            align-items: center;
+            align-items: flex-end;
             justify-content: space-between;
         }
     }
@@ -334,6 +334,7 @@ main {
 
         @include desktop {
             margin-right: 142px;
+            margin-bottom: 110px;
         }
     }
 
