@@ -298,7 +298,7 @@ main {
 @media (min-width: 1024px) {
   .about__wrapper {
     flex-direction: row;
-    align-items: center;
+    align-items: flex-end;
     justify-content: space-between;
   }
 }
@@ -344,6 +344,7 @@ main {
 @media (min-width: 1024px) {
   .about__contacts {
     margin-right: 142px;
+    margin-bottom: 110px;
   }
 }
 .about__contact {
