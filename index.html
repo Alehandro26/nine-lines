@@ -3,6 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="icon" href="./images/sprites/png/Logo.png" />
+    <link rel="apple-touch-icon" href="./images/sprites/png/Logo.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Nine line</title>
     <link rel="stylesheet" href="./build/css/style.css" />
@@ -15,7 +17,7 @@
         class="preloader__image"
       />
     </div>
-    <main>
+    <main data-scroll-container>
       <header class="header" id="header">
         <div class="header__wrapper container">
           <div class="header__menu">
@@ -25,14 +27,14 @@
           </div>
           <nav class="header__menu-des menu-des">
             <ul class="menu-des__list">
-              <li class="menu-des__item">
-                <a href="#experience" class="menu-des__link">Резюме</a>
+              <li class="menu-des__item fade">
+                <a class="menu-des__link menu-des-1">Резюме</a>
               </li>
-              <li class="menu-des__item">
-                <a href="#about" class="menu-des__link">О себе</a>
+              <li class="menu-des__item fade">
+                <a class="menu-des__link menu-des-2">О себе</a>
               </li>
-              <li class="menu-des__item">
-                <a href="#skill" class="menu-des__link">Навыки</a>
+              <li class="menu-des__item fade">
+                <a class="menu-des__link menu-des-3">Навыки</a>
               </li>
             </ul>
           </nav>
@@ -74,13 +76,13 @@
         <nav class="header__popup popup">
           <ul class="popup__list">
             <li class="popup__item">
-              <a href="#experience" class="popup__link">Резюме</a>
+              <a class="popup__link menu-1">Резюме</a>
             </li>
             <li class="popup__item">
-              <a href="#about" class="popup__link">О себе</a>
+              <a class="popup__link menu-2">О себе</a>
             </li>
             <li class="popup__item">
-              <a href="#skill" class="popup__link">Навыки</a>
+              <a class="popup__link menu-3">Навыки</a>
             </li>
           </ul>
           <div class="popup__bgr">
@@ -134,13 +136,13 @@
             <img
               src="./images/sprites/png/Logo.png"
               alt="Me"
-              class="about__image"
+              class="about__image fade"
             />
-            <h1 class="about__title">
+            <h1 class="about__title fade">
               Уваров Александр,<br />
               Front-end разработчик
             </h1>
-            <p class="about__subtitle">
+            <p class="about__subtitle fade">
               Как разработчик, я высоко ценю способность воплотить видение
               дизайнера в жизнь, что считаю очень полезным для бизнеса. Я
               получаю огромное удовлетворение, наблюдая за работой от идеи до
@@ -150,23 +152,23 @@
             </p>
           </div>
           <nav class="about__contacts">
-            <a href="mailto:neednagib@gmail.com" class="about__contact"
+            <a href="mailto:neednagib@gmail.com" class="about__contact fade"
               >neednagib@gmail.com</a
-            ><a href="tel:+79620003743" class="about__contact"
+            ><a href="tel:+79620003743" class="about__contact fade"
               >+7 (962) 000-37-43</a
-            ><span class="about__contact">г. Санкт-Петербург</span>
+            ><span class="about__contact fade">г. Санкт-Петербург</span>
             <nav class="about__social">
-              <a href="#" class="about__link"
+              <a href="#" class="about__link fade"
                 ><img
                   src="./images/sprites/svg/fb.svg"
                   alt=""
                   class="about__link-image" /></a
-              ><a href="#" class="about__link"
+              ><a href="#" class="about__link fade"
                 ><img
                   src="./images/sprites/svg/vk.svg"
                   alt=""
                   class="about__link-image" /></a
-              ><a href="#" class="about__link"
+              ><a href="#" class="about__link fade"
                 ><img
                   src="./images/sprites/svg/tg.svg"
                   alt=""
@@ -257,9 +259,9 @@
       <div class="experience" id="experience">
         <div class="experience__wrapper container">
           <section class="work">
-            <h2 class="work__title">Опыт работы</h2>
+            <h2 class="work__title fade-left">Опыт работы</h2>
             <div class="work__wrapper">
-              <div class="work__item work-card">
+              <div class="work__item work-card fade-left">
                 <span class="work-card__date">Июль 2019</span>
                 <div class="work-card__wrapper-name">
                   <h3 class="work-card__name">Freelance Designer</h3>
@@ -281,7 +283,7 @@
                 ><a href="#" class="work-card__link">Personal projects</a>
               </div>
 
-              <div class="work__item work-card">
+              <div class="work__item work-card fade-left">
                 <span class="work-card__date">Январь 2017 - Сентябрь 2018</span>
                 <div class="work-card__wrapper-name">
                   <h3 class="work-card__name">Digital Designer</h3>
@@ -314,7 +316,7 @@
                 <a href="#" class="work-card__link">Agency projects</a>
               </div>
 
-              <div class="work__item work-card">
+              <div class="work__item work-card fade-left">
                 <span class="work-card__date">Март 2014 - Февраль 2017</span>
                 <div class="work-card__wrapper-name">
                   <h3 class="work-card__name">
@@ -348,7 +350,7 @@
                 >
               </div>
 
-              <div class="work__item work-card">
+              <div class="work__item work-card fade-left">
                 <span class="work-card__date">Август 2012 - Ноябрь 2013</span>
                 <div class="work-card__wrapper-name">
                   <h3 class="work-card__name">Content Specialist</h3>
@@ -374,7 +376,7 @@
                 </p>
               </div>
 
-              <div class="work__item work-card">
+              <div class="work__item work-card fade-left">
                 <span class="work-card__date">Август 2011 - Ноябрь 2014</span>
                 <div class="work-card__wrapper-name">
                   <h3 class="work-card__name">Software Support Engineer</h3>
@@ -408,13 +410,13 @@
             <img
               src="./images/sprites/png/boy.png"
               alt="Boy image"
-              class="experience__image"
+              class="experience__image fade-bot"
             />
           </div>
           <section class="education">
-            <h2 class="education__title">Образование</h2>
+            <h2 class="education__title fade-right">Образование</h2>
             <div class="education__wrapper">
-              <div class="education__item educ-card">
+              <div class="education__item educ-card fade-right">
                 <img
                   src="./images/sprites/svg/educ.svg"
                   alt="Logo"
@@ -424,7 +426,7 @@
                 <p class="educ-card__subtitle">IT-Academy, 2020</p>
               </div>
 
-              <div class="education__item educ-card">
+              <div class="education__item educ-card fade-right">
                 <img
                   src="./images/sprites/svg/educ2.svg"
                   alt="Logo"
@@ -434,7 +436,7 @@
                 <p class="educ-card__subtitle">Skillshare, Oct 2018</p>
               </div>
 
-              <div class="education__item educ-card">
+              <div class="education__item educ-card fade-right">
                 <img
                   src="./images/sprites/svg/educ3.svg"
                   alt="Logo"
@@ -446,7 +448,7 @@
                 </p>
               </div>
 
-              <div class="education__item educ-card">
+              <div class="education__item educ-card fade-right">
                 <img
                   src="./images/sprites/svg/educ4.svg"
                   alt="Logo"
@@ -459,7 +461,7 @@
                 </p>
               </div>
 
-              <div class="education__item educ-card">
+              <div class="education__item educ-card fade-right">
                 <img
                   src="./images/sprites/svg/educ5.svg"
                   alt="Logo"
@@ -469,7 +471,7 @@
                 <p class="educ-card__subtitle">ARTOX Media, Jun-Aug 2012</p>
               </div>
 
-              <div class="education__item educ-card">
+              <div class="education__item educ-card fade-right">
                 <img
                   src="./images/sprites/svg/educ6.svg"
                   alt="Logo"
@@ -578,32 +580,32 @@
               </defs>
             </svg>
           </div>
-          <h2 class="skill__title">Навыки</h2>
+          <h2 class="skill__title fade-skill">Навыки</h2>
           <div class="skill__item-wrapper">
             <div class="skill__item">
-              <h3 class="skill__item-title">Adobe Creative Suite</h3>
-              <p class="skill__subtitle">
+              <h3 class="skill__item-title fade-skill">Adobe Creative Suite</h3>
+              <p class="skill__subtitle fade-skill">
                 Photoshop, Illustrator, InDesign, XD, After Effects
               </p>
             </div>
 
             <div class="skill__item">
-              <h3 class="skill__item-title">Prototyping</h3>
-              <p class="skill__subtitle">
+              <h3 class="skill__item-title fade-skill">Prototyping</h3>
+              <p class="skill__subtitle fade-skill">
                 Sketch, Figma, InVision, Marvel, Principle, Balsamiq
               </p>
             </div>
 
             <div class="skill__item">
-              <h3 class="skill__item-title">Additional</h3>
-              <p class="skill__subtitle">
+              <h3 class="skill__item-title fade-skill">Additional</h3>
+              <p class="skill__subtitle fade-skill">
                 HTML, CSS, Google Analytics, Keynote, Miro
               </p>
             </div>
 
             <div class="skill__item">
-              <h3 class="skill__item-title">Languages</h3>
-              <p class="skill__subtitle">
+              <h3 class="skill__item-title fade-skill">Languages</h3>
+              <p class="skill__subtitle fade-skill">
                 Conversational English and Native Russian
               </p>
             </div>
@@ -615,12 +617,12 @@
           <img
             src="./images/sprites/png/love.png"
             alt="Love image"
-            class="footer__image"
+            class="footer__image fade-skill"
           />
         </div>
       </footer>
       <aside class="top-link">
-        <a href="#header" class="top-link__link"
+        <a class="top-link__link"
           ><svg
             width="12"
             height="13"
@@ -632,6 +634,8 @@
             <path d="M1 6L6 1L11 6" stroke="#282A33" stroke-width="1.2" /></svg
         ></a>
       </aside>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollTrigger.min.js"></script>
       <script src="./js/main.js"></script>
     </main>
   </body>

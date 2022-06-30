@@ -9,6 +9,10 @@ body {
     }
 }
 
+a {
+    cursor: pointer;
+}
+
 .preloader {
     z-index: 20;
     position: fixed;
@@ -61,6 +65,7 @@ main {
 
 .header {
     position: relative;
+    min-height: 48px;
     z-index: 10;
     padding-top: 30px;
 
@@ -80,6 +85,22 @@ main {
         @include desktop {
             display: none;
         }
+
+        &.active {
+            position: fixed;
+            top: 30px;
+            right: 20px;
+
+            .header__line:nth-child(2) {
+                opacity: 0;
+            }
+            .header__line:first-child {
+                transform: rotate(-45deg) translate(-5px, 6px);
+            }
+            .header__line:last-child {
+                transform: rotate(45deg) translate(-5px, -6px);
+            }
+        }
     }
 
     &__line {
@@ -87,6 +108,7 @@ main {
         width: 26px;
         height: 2.25px;
         background: #282A33;
+        transition: all .3s ease;
 
         &:nth-child(2) {
             margin: 5.62px 0;
@@ -128,6 +150,12 @@ main {
         margin-left: 32px;
     }
 
+    &__item {
+        transition: .3s;
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
     &__link {
         text-decoration: none;
         font-family: 'SF Pro Display Bold';
@@ -136,6 +164,33 @@ main {
         font-size: 18px;
         line-height: 21px;
         color: #282A33;
+        transition: .4s;
+       
+
+        &:hover {
+            color: #8003b9;
+        }
+    }
+}
+
+@keyframes popupAppear {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes popupItem {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0)
     }
 }
 
@@ -151,6 +206,22 @@ main {
 
     &.active {
         display: block;
+        opacity: 0;
+        animation: popupAppear 0.25s ease forwards;
+
+        .popup__item {
+            animation: popupItem 0.3s 0.3s ease forwards;
+        }
+        .popup__item:nth-child(2) {
+            animation-delay: 0.4s;
+        }
+        .popup__item:last-child {
+            animation-delay: 0.5s;
+        }
+
+        .popup__bgr {
+            animation: popupAppear 0.4s 0.5s ease forwards;
+        }
     }
 
     &__list {
@@ -161,6 +232,11 @@ main {
         list-style: none;
         position: relative;
         z-index: 1;
+    }
+
+    &__item {
+        opacity: 0;
+        transform: translateY(30px);
     }
 
     &__link {
@@ -177,6 +253,8 @@ main {
         display: flex;
         justify-content: center;
         margin-top: -33px;
+        opacity: 0;
+        transform: scale(0.5);
     }
 
     &__image {
@@ -222,6 +300,8 @@ main {
     &__image {
         width: 21.33vw;
         height: 100%;
+        opacity: 0;
+        transform: translateY(30px);
 
         @include desktop {
             width: 150px;
@@ -233,11 +313,18 @@ main {
         padding: 30px 0 20px;
         font-size: 28px;
         line-height: 140%;
+        opacity: 0;
+        transform: translateY(30px);
 
         @include desktop {
             padding: 40px 0 30px;
             font-size: 36px;
         }
+    }
+
+    &__subtitle {
+        opacity: 0;
+        transform: translateY(30px);
     }
 
     &__contacts {
@@ -258,6 +345,8 @@ main {
         font-size: 14px;
         line-height: 140%;
         color: #282A33;
+        opacity: 0;
+        transform: translateY(30px);
     }
 
     &__social {
@@ -266,7 +355,10 @@ main {
         margin-top: 5px;
     }
 
-    
+    &__link {
+        opacity: 0;
+        transform: translateY(30px);
+    }
 
     &__link-image {
         display: block;
@@ -337,6 +429,8 @@ main {
         display: block;
         width: 53.33vw;
         height: 100%;
+        opacity: 0;
+        transform: translateY(250px);
 
         @include desktop {
             width: 34.72vw;
@@ -353,6 +447,8 @@ main {
         font-size: 20px;
         line-height: 24px;
         margin-bottom: 20px;
+        transform: translateX(-40px);
+        opacity: 0;
 
         @include desktop {
             font-size: 24px;
@@ -369,6 +465,9 @@ main {
 }
 
 .work-card {
+    transform: translateX(-40px);
+    opacity: 0;
+
     &__date {
         font-family: 'SF Pro Display Regular';
         font-style: normal;
@@ -438,6 +537,8 @@ main {
         font-size: 20px;
         line-height: 24px;
         margin-bottom: 16px;
+        opacity: 0;
+        transform: translateX(40px);
 
         @include desktop {
             font-size: 24px;
@@ -464,6 +565,8 @@ main {
     gap: 5px;
     flex: 0 1 157px;
     align-items: center;
+    opacity: 0;
+    transform: translateX(40px);
 
     &__image {
         width: fit-content;
@@ -525,6 +628,8 @@ main {
         font-size: 22px;
         line-height: 26px;
         margin-bottom: 21px;
+        opacity: 0;
+        transform: translateY(30px);
     }
 
     &__item-wrapper {
@@ -545,6 +650,13 @@ main {
         font-size: 14px;
         line-height: 17px;
         margin-bottom: 6px;
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    &__subtitle {
+        opacity: 0;
+        transform: translateY(30px);
     }
 }
 
@@ -564,6 +676,8 @@ main {
         max-width: 512px;
         width: 100vw;
         height: 100%;
+        opacity: 0;
+        transform: translateY(30px);
     }
 }
 
