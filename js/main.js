@@ -1,9 +1,9 @@
-window.addEventListener('load', () => {
-    const loader = document.querySelector('.preloader');
-    const loaderImage = document.querySelector('.preloader__image');
+const loader = document.querySelector('.preloader');
+const loaderImage = document.querySelector('.preloader__image');
 
-    loaderImage.style.animation = 'loader 2s linear forwards';
-    setTimeout(() => loader.style.display = "none", 2000)
+window.addEventListener('load', () => {
+    loaderImage.style.animation = 'loader 2.5s linear forwards';
+    setTimeout(() => loader.style.display = "none", 2500);
 })
 
 
@@ -71,32 +71,32 @@ function menuItemThree() {
     menuItem1.classList.remove('active');
 }
 
-const header = document.querySelector('.header');
 const scrollTop = document.querySelector('.top-link__link');
 
-scrollTop.addEventListener('click', () => header.scrollIntoView({behavior: "smooth"}));
+scrollTop.addEventListener('click', () => scrollTo(0, 0));
 
 gsap.registerPlugin(ScrollTrigger);
 
-gsap.to(".fade", {
+let fadeExperience = () => {
+  setTimeout(() => {
+    gsap.to(".fade", {
       scrollTrigger: {
         trigger: ".fade",
         start: "80px 55%",
       },
       opacity: 1,
       y: 0,
-      delay: 2,
-      duration: 0.6,
+      duration: 1,
       ease: "power4.out",
       stagger: {
-        amount: 0.4,
+        amount: 0.6,
       },
     });
 
     gsap.to(".fade-bot", {
       scrollTrigger: {
         trigger: ".fade-bot",
-        start: "0 70%",
+        start: "0 75%",
       },
       opacity: 1,
       y: 0,
@@ -135,7 +135,7 @@ gsap.to(".fade", {
       },
     });
 
-    gsap.to(".fade-skill", {
+       gsap.to(".fade-skill", {
       scrollTrigger: {
         trigger: ".fade-skill",
         start: "0 75%",
@@ -149,15 +149,18 @@ gsap.to(".fade", {
       },
     });
 
-
-
-/*
-const linkList = document.querySelectorAll('.menu-des__link');
-linkList.forEach(link => link.addEventListener('click', linkActive));
-
-
-function linkActive(e) {
-    e.target.classList.add('active');
+  }, 2500)
 }
-*/
 
+fadeExperience();
+
+const linkTop = document.querySelector('.top-link');
+const footer = document.querySelector('.footer');
+
+window.addEventListener('scroll', () => {
+  if (((window.innerHeight + window.scrollY) + (footer.clientHeight / 3)) >= document.body.scrollHeight) {
+    linkTop.classList.add('active')
+  } else if (window.scrollY <= 100) {
+    linkTop.classList.remove('active');
+  }
+})
