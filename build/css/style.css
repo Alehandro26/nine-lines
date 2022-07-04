@@ -807,41 +807,67 @@ main {
 
 .top-link {
   position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   right: 20px;
   bottom: 20px;
-  border: 1px solid #d2233c;
-  background-color: white;
   border-radius: 50%;
   width: 30px;
   height: 30px;
-  transform: translateY(150px);
   transition: 0.3s;
-}
-.top-link.active {
-  transform: translateY(0);
 }
 @media (min-width: 1440px) {
   .top-link {
     right: 25px;
-    bottom: 90px;
+    bottom: 25px;
     width: 48px;
     height: 48px;
   }
 }
-.top-link__link {
+.top-link.active {
+  bottom: 90px;
+}
+.top-link.active .top-link__link {
   display: flex;
+}
+.top-link.active .top-link__progress {
+  display: none;
+}
+.top-link__link {
+  display: none;
   align-items: center;
   justify-content: center;
-  width: 100%;
-  height: 100%;
+  height: calc(100% - 6px);
+  width: calc(100% - 6px);
+  background: #ffffff;
+  border-radius: 50%;
   border-style: none;
   cursor: pointer;
-  background: none;
 }
 @media (min-width: 1440px) {
   .top-link__link svg {
     width: 18px;
     height: 24px;
+  }
+}
+.top-link__progress {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100% - 6px);
+  width: calc(100% - 6px);
+  background-color: #ffffff;
+  border-radius: 50%;
+  font-family: "SF Pro Display Regular";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 100%;
+}
+@media (min-width: 1024px) {
+  .top-link__progress {
+    font-size: 14px;
   }
 }
 
