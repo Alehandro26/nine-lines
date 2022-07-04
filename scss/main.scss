@@ -603,26 +603,28 @@ main {
 		color: #2f80ed;
 	}
 
-	
+
 
 	&:first-child {
 		@include mobile {
 			.work-card__link:last-child {
 				margin-top: 2.5px;
 			}
+
 			.work-card__wrapper-name {
 				padding: 7px 0;
 			}
+
 			.work-card__subtitle {
 				line-height: 17px;
 			}
-		}	
+		}
 	}
 
 	&:nth-child(3) {
 		@include desktop {
 			.work-card__wrapper-name {
-			padding: 5px 0 6px;
+				padding: 5px 0 6px;
 			}
 		}
 
@@ -643,9 +645,9 @@ main {
 
 .education {
 	@include desktop {
-			text-align: center;
-			width: 269px;
-		}
+		text-align: center;
+		width: 269px;
+	}
 
 	&__title {
 		margin-bottom: 16px;
@@ -653,7 +655,7 @@ main {
 		line-height: 24px;
 		opacity: 0;
 		transform: translateX(40px);
-		
+
 		@include mobile {
 			margin-left: 2px;
 		}
@@ -676,7 +678,7 @@ main {
 		}
 	}
 
-	
+
 }
 
 .educ-card {
@@ -720,8 +722,8 @@ main {
 	padding-top: 40px;
 
 	@include desktop {
-			padding-top: 192px;
-		}
+		padding-top: 192px;
+	}
 
 	&__wrapper {
 		position: relative;
@@ -885,7 +887,7 @@ main {
 		font-family: 'SF Pro Display Regular';
 		font-style: normal;
 		font-weight: 400;
-		font-size: 12px;
+		font-size: 10px;
 		line-height: 100%;
 
 		@include desktop {
